@@ -1,15 +1,18 @@
 const addButton = document.getElementById('add-to-list')
 
 addButton.addEventListener('click', function() {
-    addNewTodo();
+    let newTodo = document.getElementById('input-box').value;
+    addNewTodo(newTodo);
+    document.getElementById('input-box').value = '';
 });
 
-function addNewTodo() {
-    const newTodo = document.getElementById('input-box').value;
-    let list = document.createElement('li')
-    let node = document.createTextNode(newTodo);
-    list.appendChild(node);
-    const display = document.getElementById('display-list');
-
-    display.appendChild(list);
+function addNewTodo(newTodo) {
+    let list = document.createElement('li');
+    list.innerHTML = newTodo;
+    document.getElementById('display-list').appendChild(list);
+    
+    // let node = document.createTextNode(newTodo);
+    // list.appendChild(node);
+    // const display = document.getElementById('display-list');
+    // display.appendChild(list);
 }
