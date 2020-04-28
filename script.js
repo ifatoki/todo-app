@@ -2,17 +2,31 @@ const addButton = document.getElementById('add-to-list')
 
 addButton.addEventListener('click', function() {
     let newTodo = document.getElementById('input-box').value;
-    addNewTodo(newTodo);
+     if (newTodo === '') {
+        alert('Write something😉');
+    } else {
+        addNewTodo(newTodo);
+    }
     document.getElementById('input-box').value = '';
 });
 
 function addNewTodo(newTodo) {
     let list = document.createElement('li');
-    list.innerHTML = newTodo;
-    document.getElementById('display-list').appendChild(list);
+    let spanElement = document.createElement('span');
+    let icon = document.createElement('i');
     
-    // let node = document.createTextNode(newTodo);
-    // list.appendChild(node);
-    // const display = document.getElementById('display-list');
-    // display.appendChild(list);
+    list.innerHTML = newTodo;
+
+    icon.classList.add('fa-trash-alt');
+    spanElement.append(icon);
+
+    document.getElementById('display-list').appendChild(list, spanElement);
 }
+
+// edit = () => {
+
+// }
+
+// trash = () => {
+//   
+// }
