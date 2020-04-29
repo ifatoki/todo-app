@@ -49,49 +49,63 @@ body {
 ul {
     border-bottom: 2px solid #4f3961;
     padding-left: 0;
-    list-style-position: inside;
+    list-style-position: none;
 }
 
 li {
     border: 1px solid #d45079;
-    width: 100%;
     border-radius: 0.5rem;
     font-size: 2rem;
-    padding: 0.5rem;
     margin-bottom: 0.5rem;
     background-color: #fff;
     font-family: 'Caveat', cursive;
     color: #a3234c;
-    display: block;
-    position: relative;
-}
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+} 
 
 li:hover {
     background-color: #e9e1cc;
 }
 
-/* .clicked {
-    text-decoration: line-through;
-} */
+.text-content {
+    width: 75%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-/* .change {
+.change-button {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: row nowrap;
+    width: 25%;
+    justify-content: space-around;
+}
+
+.done,
+.edit,
+.delete {
+    border: none;
+    padding: 0;
+    font-size: 1.25rem;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    padding: 0 0.25rem;
-    transform: translate(0%, -50%);
-    color: #4f3961;
-    font-size: 1.5rem;
+    color: #a3234c;
+    margin: 0;
+    outline: none;
+    background-color: #fff;
 }
 
-.change:hover {
+.done:hover,
+.edit:hover,
+.delete:hover {
+    border: 1px solid #a3234c;
     color: #260a3d;
+    background-color: #e9e1cc;
 }
-
-.far {
-    display: inline;
-} */
 
 h1,
 p {
@@ -99,7 +113,7 @@ p {
     color: #260a3d;
 }
 
-button {
+#add-to-list {
     font-size: 1.5rem;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -112,21 +126,8 @@ button {
     font-family: 'Pacifico', cursive;
 }
 
-/* span {
-    border: 1px solid black;
-}
-
-icon:hover {
-    color: #260a3d;
-}
-
-li {
-    display: flex;
-    
-} */
-
-button:active,
-button:hover {
+#add-to-list:active,
+#add-to-list:hover {
     background-color: #260a3d;
 }
 
