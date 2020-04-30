@@ -46,7 +46,7 @@ body {
     font-family: 'Caveat', cursive;
 }
 
-ul {
+#display-list {
     border-bottom: 2px solid #4f3961;
     padding-left: 0;
     list-style-position: none;
@@ -54,6 +54,7 @@ ul {
 
 li {
     border: 1px solid #d45079;
+    width: 100%;
     border-radius: 0.5rem;
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -62,16 +63,11 @@ li {
     color: #a3234c;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 } 
 
-li:hover {
-    background-color: #e9e1cc;
-}
-
 .text-content {
-    width: 75%;
+    width: 60%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -82,29 +78,39 @@ li:hover {
     /* border: 2px solid red; */
     display: flex;
     flex-flow: row nowrap;
-    width: 25%;
-    justify-content: space-around;
+    width: 30%;
+    justify-content: space-evenly;
 }
 
 .done,
-.edit,
 .delete {
-    border: none;
-    padding: 0;
-    font-size: 1.25rem;
+    font-family: 'Pacifico', cursive;
+    padding: 0.1rem;
+    font-size: 1rem;
     cursor: pointer;
-    color: #a3234c;
     margin: 0;
     outline: none;
     background-color: #fff;
+    color: #260a3d;
+    border: none;
 }
 
 .done:hover,
-.edit:hover,
 .delete:hover {
-    border: 1px solid #a3234c;
+       text-decoration: underline;
+}
+
+.done:hover {
+    color: #059405;
+}
+
+.delete:hover {
+    color: #aa0808;
+}
+
+.clicked {
+    text-decoration: line-through;
     color: #260a3d;
-    background-color: #e9e1cc;
 }
 
 h1,
@@ -131,7 +137,7 @@ p {
     background-color: #260a3d;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
     .container {
         padding: 0 3rem;
     }
@@ -145,8 +151,37 @@ p {
         width: 75%;
     }
 
-    button {
+    #add-to-list {
         margin-top: 0;
         width: 20%;
     }
+
+    /* .text-content {
+        width: 75%;
+    }
+
+    .change-button {
+        width: %;
+    } */
+
+    .done,
+    .delete {
+        font-size: 1.25rem;
+    }
 }
+
+@media (max-width: 400px) {
+    body,
+    .container {
+        background-color: #ea9085;;
+    }
+
+    .container {
+        border: none;
+        width: 100%
+    }
+
+    body {
+        padding: 0 2rem;
+    }
+}   
